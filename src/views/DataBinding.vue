@@ -55,6 +55,28 @@
         </table> -->
         <!-- 리스트 랜더링 예제 -->
 
+        <!-- <div>
+            <h1 v-if="type=='A'">A</h1>
+            <h1 v-else-if="type=='B'">B</h1>
+            <h1 v-else>C</h1>
+            <h1 v-show="bShow == 'A'">bShow</h1>
+        </div> -->
+        <!-- 랜더링 문법(v-if, v-show) v-if는 toggle형식. 조건이 true일때 html이 삭제가 되거 생성됨
+        그러나 v-show는 처음 랜더링 될때 html이 생기고 css로 display가 바뀌는 형식. 형식이 자주 바뀌면 v-show를 쓰는게 좋고, 자주 바뀌지 않는다면 v-if를 쓰는게 좋다.
+         -->
+
+        <!-- <button type="button" @click="increaseCounter">Add 1</button>
+        <p>The counter is : {{counter}}</p> -->
+        <!-- <button type="button" @click="setCount(7)">Add 1</button>
+        <p>The counter is : {{counter}}</p> -->
+        <!-- <button type="button" @click="one(), two()">Click</button> -->
+        <!-- Click 이벤트 -->
+
+        <select v-model="selectedValue" @change="changeSelect">
+            <option value="서울">서울</option>
+            <option value="부산">부산</option>
+            <option value="제주">제주</option>
+        </select>
 
 
     </div>
@@ -111,7 +133,36 @@
             // ]
             // 리스트 랜더링 예제
 
+            // type : 'B',
+            // bShow : 'A'
+            // 랜더링 예제(v-if, v-show)
+
+            // counter : 0
+            // click이벤트예제
+
+            selectedValue : '서울'
+
            }
+        },
+
+        methods : {
+            // increaseCounter(){
+            //     this.counter = this.counter + 1;
+            // }
+            // setCount(counter){
+            //     this.counter = counter;
+            // }
+            // one(){
+            //     alert('One')
+            // },
+            // two(){
+            //     alert('Two')
+            // }
+            // click이벤트 예제
+
+            changeSelect(){
+                alert(this.selectedValue)
+            }
         }
     }
 </script>
