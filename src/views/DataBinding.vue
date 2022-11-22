@@ -72,11 +72,30 @@
         <!-- <button type="button" @click="one(), two()">Click</button> -->
         <!-- Click 이벤트 -->
 
-        <select v-model="selectedValue" @change="changeSelect">
+        <!-- <select v-model="selectedValue" @change="changeSelect">
             <option value="서울">서울</option>
             <option value="부산">부산</option>
             <option value="제주">제주</option>
-        </select>
+        </select> -->
+        <!-- change이벤트 -->
+
+        <!-- <input @keyup.enter="submit" /> -->
+        <!-- key이벤트 ==> 어떤 키가 입력되었는지 감지 할 수 있는 이벤트 위에 예시같은 경우는 enter키의 입력을 감지할 수 있다. -->
+        <!-- <input @keyup.alt.enter = "clear"/> -->
+        <!-- Alt + Enter키 감지 -->
+        <!-- <div @click.ctrl="doSomething">Do something</div> -->
+        <!-- Ctrl + Click -->
+        <!-- Key 이벤트 -->
+
+        <!-- <h1>{{firstName + ' '+ lastName}}</h1> -->
+        <!-- <h1>{{getFullName()}}</h1> -->
+        <!-- <h1>Full Name : {{fullName}}</h1> -->
+        <!-- computed : 데이터베이스에서 데이터를 불러올 경우 처음 값을 화면에서 보여주고, 데이터값이 바뀔때마다 computed함수 실행 . 첫번째 예제와 두번째 예제는 화면에 보여줘야 하는만큼
+        함수를 호출하거나 연산해야함. computed는 데이터가 바뀔때 한번만 실행됨-->
+
+        <h1>Full Name : {{fullName}}</h1>
+        <button type="button" @click="changeName">변경</button>
+        <!-- watch : 처음랜더링 할때 초기값을 받았을때는 값에 변화가 없다고 인식되어 값이 표출되지 않는다. 데이터베이스에서 데이터가 바뀌어야 화면에 함수가 실행되면서 표출됨. -->
 
 
     </div>
@@ -140,9 +159,27 @@
             // counter : 0
             // click이벤트예제
 
-            selectedValue : '서울'
+            // selectedValue : '서울'
+            // change이벤트
 
+            firstName : 'Seungwon',
+            lastName : 'Go',
+            fullName : ''
            }
+        },
+        // computed : {
+        //     fullName(){
+        //         return this.firstName + ' ' + this.lastName;
+        //     }
+        // },
+
+        watch : {
+            firstName(){
+                this.fullName = this.firstName + ' ' + this.lastName;
+            },
+            lastName(){
+                this.fullName = this.firstName + ' ' + this.lastName;
+            }
         },
 
         methods : {
@@ -160,9 +197,19 @@
             // }
             // click이벤트 예제
 
-            changeSelect(){
-                alert(this.selectedValue)
+            // changeSelect(){
+            //     alert(this.selectedValue)
+            // }
+            // change이벤트
+
+            // getFullName(){
+            //     return this.firstName + ' ' + this.lastName;
+            // }
+
+            changeName(){
+                this.firstName = 'Eunsol';
             }
+
         }
     }
 </script>
