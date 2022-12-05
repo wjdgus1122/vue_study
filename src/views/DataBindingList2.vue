@@ -30,7 +30,7 @@ export default {
     },
     created(){
         this.getList()
-    },
+    }, 
     methods : {
         async getList(){
             this.productList = await this.$api("https://40ca3296-3836-45a7-9172-879db36e832a.mock.pstmn.io/testlist", "get")

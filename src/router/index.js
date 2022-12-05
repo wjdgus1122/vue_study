@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DataBinding from "../views/DataBinding.vue";
 import DataBindingList2 from "../views/DataBindingList2.vue";
+import ComptHard from "../views/ComptHard.vue";
+import Parent from "../views/ParentComponent.vue";
 
 const routes = [
   {
@@ -27,6 +29,16 @@ const routes = [
     path: "/databindinglist2",
     name: "DataBindingList2",
     component: DataBindingList2,
+  },
+  {
+    path: "/compthard",
+    name: "ComptHard",
+    component: ComptHard,
+  },
+  {
+    path: "/parent",
+    name: "Parent",
+    component: Parent,
   },
 ];
 

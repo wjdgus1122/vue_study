@@ -2,7 +2,9 @@
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/databinding">Data Binding</router-link> |
-    <router-link to="/databindinglist2">Data Binding List</router-link>
+    <router-link to="/databindinglist2">Data Binding List</router-link> |
+    <router-link to="/compthard">ComptHard</router-link> |
+    <router-link to="/parent">Parent</router-link>
   </nav>
   <router-view/>
 </template>
